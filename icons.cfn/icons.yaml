@@ -1,0 +1,33 @@
+sys_path: ./
+namespace: ${customer}-${environment}
+stacker_bucket: stacker-${customer}-${environment}-${region}
+
+common_parameters: &common_parameters
+  ResMgmtFunArn: ${xref cfn-res-mgr-${environment}::LambdaFunctionArn}
+
+stacks:
+  widget1:
+    template_path: templates/icon.yaml
+    variables:
+      << : *common_parameters
+      Type: bomb
+  widget2:
+    template_path: templates/icon.yaml
+    variables:
+      << : *common_parameters
+      Type: squid
+  widget3:
+    template_path: templates/icon.yaml
+    variables:
+      << : *common_parameters
+      Type: crown
+  widget4:
+    template_path: templates/icon.yaml
+    variables:
+      << : *common_parameters
+      Type: trash
+  widget5:
+    template_path: templates/icon.yaml
+    variables:
+      << : *common_parameters
+      Type: head
