@@ -3,7 +3,7 @@
 * Modify the icon list to the custom list provided through direct message
 * Launch the runway project in your lab account make the necessary modifications to have a unique S3 bucket for web hosting.
 * Once launched update the static html file to point to your newly launched API GW end point.
-* Be prepared answer the questions in a direct message before the due date
+* Be prepared to answer the questions in a direct message before the due date
 
 ### Questions
 1. What is the URL to your forked git repo of the project?
