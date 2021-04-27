@@ -1,18 +1,34 @@
 # CFN Custom Resource Manager demo
-* Fork the github repo: https://github.com/tonyfruzza/aws_cfn_cust_res_mgr_demo into your own git account.
-* Modify the icon list to the custom list provided through direct message
-* Launch the runway project in your lab account make the necessary modifications to have a unique S3 bucket for web hosting.
-* Once launched update the static html file to point to your newly launched API GW end point.
-* Be prepared to answer the questions in a direct message before the due date
 
-### Questions
-1. What is the URL to your forked git repo of the project?
-2. What is the URL to your web hosted static S3 bucket?
-3. What is your web hosted static s3 bucket policy?
-4. What is the github URL to the serverless framework plugin that was used to upload the static s3 content?
-5. What is the name of the lambda function launched for managing the custom cloudformation resources?
-6. What is the name of the table that the state of the resources are stored in?
-7. Which javascript library is used to draw the icons?
-8. Which headers need to be present from the API server to allow for CORS?
-9. What common ID type is used for the physical resource ID?
-10. Do custom resource lambda functions require IAM permissions to interact with cloudformation (not including the IAM managed role permission in AWSLambdaBasicExecutionRole)?
+This sample repo contains infrastructure to demonstrate how custom cloudformation resources can be created using Serverless Framework and then consumed elsewhere. The custom cloudformation resource creates entries into a DynamoDB table. An API Gateway end point is generated that exposes these inserted values as rendered icons. `icons.cfn` contains resources that will be created. Available icon parameter names include:
+- head
+- alarm
+- cell
+- hour_glass
+- pd
+- sql
+- trash
+- bell
+- construction
+- hammer
+- key
+- screen
+- tag
+- bomb
+- crown
+- squid
+- tombstone
+
+Deploy this sample and then try different combinations or even add additional stacks.
+
+## Deploy
+AWS Cloudformation managed by:
+* Serverless Framework https://github.com/serverless/serverless
+* CFNgin https://github.com/runway-examples/cfngin-bucket
+* Runway https://docs.onica.com/projects/runway/en/stable/
+
+To install the above tools on your system you'll need python, pip and npm on your machine. Using pip install `pipenv`. Within the root of this project run `pipenv sync` this will install `runway` which comes packaged with CFNgin and Serverless Framework. Included is a GNU Makefile with a deploy target of `deploy-demo`, so invoke this with `make deploy-demo`.
+The modules defined within `runway.yml` will be iterated through.
+
+## Use/Distribution/Contribute
+Feel free use in any way you'd like and provide feedback in issues here. The pre-req's for your workstation may be slightly different than my own. I'd like to make this as accessible as possible, so please contribute what has worked for you.
