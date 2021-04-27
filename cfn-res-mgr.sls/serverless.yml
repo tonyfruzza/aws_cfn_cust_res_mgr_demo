@@ -1,4 +1,7 @@
 service: cfn-res-mgr
+package:
+  exclude:
+    - 'node_modules/**'
 provider:
   name: aws
   runtime: python3.7

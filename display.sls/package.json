@@ -8,7 +8,5 @@
     "serverless-s3-sync": "^1.9.2"
   },
   "author": "Onica",
-  "dependencies": {
-    "serverless-plugin-aws-alerts": "^1.2.4"
-  }
+  "dependencies": {}
 }

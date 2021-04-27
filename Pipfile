@@ -6,7 +6,7 @@ name = "pypi"
 [dev-packages]
 
 [packages]
-runway = "== 0.34"
+runway = "== 1.18.3"
 
 [requires]
 python_version = "2.7"
