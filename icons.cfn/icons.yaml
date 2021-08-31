@@ -1,6 +1,6 @@
 sys_path: ./
 namespace: ''
-cfngin_bucket: stacker-${customer}-${environment}-${region}
+# cfngin_bucket: stacker-${customer}-${environment}-${region}
 
 common_parameters: &common_parameters
   ResMgmtFunArn: ${cfn cfn-res-mgr-${environment}.LambdaFunctionArn}
@@ -32,7 +32,7 @@ stacks:
       << : *common_parameters
       Type: head
 
-post_build:
+post_deploy:
   render_template:
     path: hooks.replace.string
     args:

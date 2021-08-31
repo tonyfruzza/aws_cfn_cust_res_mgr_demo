@@ -1,17 +1,14 @@
-"""Handles tasks related to cookbook archives."""
-
 from contextlib import contextmanager
 from subprocess import check_call
 
 import io
 import os
 import re
-import stacker
 
 from distutils.version import LooseVersion
-from stacker.session_cache import get_session
-from stacker.hooks import utils
-from stacker.lookups.handlers.rxref import RxrefLookup
+from runway.cfngin.session_cache import get_session
+from runway.cfngin.hooks import utils
+from runway.cfngin.lookups.handlers.rxref import RxrefLookup
 
 xref_handler = RxrefLookup.handle
 
