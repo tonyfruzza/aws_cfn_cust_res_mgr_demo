@@ -1,5 +1,5 @@
 sys_path: ./
-namespace: ''
+namespace: ${environment}
 # cfngin_bucket: stacker-${customer}-${environment}-${region}
 
 common_parameters: &common_parameters
@@ -10,27 +10,27 @@ stacks:
     template_path: templates/icon.yaml
     variables:
       << : *common_parameters
-      Type: screen
+      Type: ${icon1}
   widget2:
     template_path: templates/icon.yaml
     variables:
       << : *common_parameters
-      Type: tag
+      Type: ${icon2}
   widget3:
     template_path: templates/icon.yaml
     variables:
       << : *common_parameters
-      Type: squid
+      Type: ${icon3}
   widget4:
     template_path: templates/icon.yaml
     variables:
       << : *common_parameters
-      Type: tombstone
+      Type: ${icon4}
   widget5:
     template_path: templates/icon.yaml
     variables:
       << : *common_parameters
-      Type: head
+      Type: ${icon5}
 
 post_deploy:
   render_template:

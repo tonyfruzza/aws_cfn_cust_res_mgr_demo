@@ -8,9 +8,9 @@ import re
 from distutils.version import LooseVersion
 from runway.cfngin.session_cache import get_session
 from runway.cfngin.hooks import utils
-from runway.cfngin.lookups.handlers.rxref import RxrefLookup
+from runway.cfngin.lookups.handlers.xref import XrefLookup
 
-xref_handler = RxrefLookup.handle
+xref_handler = XrefLookup.handle
 
 def string(provider, context, **kwargs):  # pylint: disable=W0613
     path = kwargs.get('path', 'undefined')

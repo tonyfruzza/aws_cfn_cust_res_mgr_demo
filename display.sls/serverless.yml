@@ -16,12 +16,12 @@ provider:
         - dynamodb:Scan
         - dynamodb:UpdateItem
       Resource:
-        - ${cf:cfn-res-mgr-demo.StateManagerArn}
+        - ${cf:cfn-res-mgr-${opt:stage, 'dev'}.StateManagerArn}
 
 functions:
   lookup:
     environment:
-      STATE_TBL_NAME: ${cf:cfn-res-mgr-demo.StateManagerName}
+      STATE_TBL_NAME: ${cf:cfn-res-mgr-${opt:stage, 'dev'}.StateManagerName}
     handler: handler.lambda_handler
     events:
       - http:

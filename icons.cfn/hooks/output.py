@@ -4,8 +4,8 @@ from subprocess import check_call
 import io
 import os
 
-from runway.cfngin.lookups.handlers.rxref import RxrefLookup
-xref_handler = RxrefLookup.handle
+from runway.cfngin.lookups.handlers.xref import XrefLookup
+xref_handler = XrefLookup.handle
 
 def print_xref_msg(provider, context, **kwargs):  # pylint: disable=W0613
     xref_output = kwargs.get('xref_output', 'undefined')
