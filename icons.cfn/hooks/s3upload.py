@@ -7,8 +7,8 @@ import os
 from distutils.version import LooseVersion
 from runway.cfngin.session_cache import get_session
 from runway.cfngin.hooks import utils
-from runway.cfngin.lookups.handlers.rxref import RxrefLookup
-xref_handler = RxrefLookup.handle
+from runway.cfngin.lookups.handlers.xref import XrefLookup
+xref_handler = XrefLookup.handle
 
 def upload(provider, context, **kwargs):  # pylint: disable=W0613
     s3_file_key = kwargs.get('s3_file_key', 'common')

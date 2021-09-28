@@ -28,7 +28,7 @@ resources:
     stateManager:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:service}-${self:provider.stage}-state
+        TableName: ${self:service}-${opt:stage, 'dev'}-state
         AttributeDefinitions:
           - AttributeName: resourceId
             AttributeType: S
